@@ -1,7 +1,7 @@
-#ifndef main.h
-#define main.h
+#ifndef MAIN.H
+#define MAIN.H
 
-int _isupper(int c);
+int _isupper(char c);
 
 
 
