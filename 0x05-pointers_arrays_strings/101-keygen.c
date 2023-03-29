@@ -2,29 +2,24 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 10
-
 /**
- * main - Entry point of the program
- *
- * Return: Always 0 (Success)
- */
+  * main - Entry point
+  * Return: 0
+  */
 int main(void)
 {
-	char password[PASSWORD_LENGTH + 1];
-	const char charset[] = "abcdefghijklmnopqrstuvwxyzAB" +
-		"CDEFGHIJKLMNOPQRSTUVWXYZ" +
-		"0123456789!@#$%^&*()_+-=[]{}|;:,.<>/?";
+	int r = 0, c = 0;
+	time_t t;
 
-	srand(time(NULL));
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
+	srand((unsigned int) time(&t));
+	while (c < 2772)
 	{
-		password[i] = charset[rand() % (sizeof(charset) - 1)];
+		r = rand() % 128;
+		if ((c + r) > 2772)
+			break;
+		c = c + r;
+		printf("%c", (char)r);
 	}
-	password[PASSWORD_LENGTH] = '\0';
-
-	printf("%s\n", password);
-
-	return (0);
+	printf("%c", (char)(2772 - c));
+	return (0)#include <stdio.h>
 }
-
