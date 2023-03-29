@@ -21,5 +21,5 @@ int main(void)
 		printf("%c", (char)r);
 	}
 	printf("%c", (char)(2772 - c));
-	return (0)#include <stdio.h>
+	return (0);
 }
