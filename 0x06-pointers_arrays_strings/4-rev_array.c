@@ -1,33 +1,22 @@
 #include "main.h"
 
 /**
- * _strcmp - Compares two strings.
+ * reverse_array - Reverses the contents of an array of integers.
  *
- * @s1: Pointer to the first string to be compared.
- * @s2: Pointer to the second string to be compared.
+ * @a: Pointer to the first element of the array to be reversed.
+ * @n: Number of elements in the array.
  *
- * Return: Integer value indicating the lexicographical relationship between
- *         the two strings. If s1 is less than s2, the function returns a
- *         negative number; if s1 is greater than s2, the function returns a
- *         positive number; and if s1 and s2 are equal, the function returns 0.
+ * Return: void.
  */
-int _strcmp(char *s1, char *s2)
+void reverse_array(int *a, int n)
 {
-	int i;
+	int i, temp;
 
-	for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
+	for (i = 0; i < n / 2; i++)
 	{
-		if (s1[i] != s2[i])
-		{
-			return ((s1[i] < s2[i]) ? -1 : 1);
-		}
-	}
-	if (s1[i] == '\0' && s2[i] == '\0')
-	{
-		return (0);
-	}
-	else
-	{
-		return ((s1[i] < s2[i]) ? -1 : 1);
+		temp = a[i];
+		a[i] = a[n - i - 1];
+		a[n - i - 1] = temp;
 	}
 }
+
