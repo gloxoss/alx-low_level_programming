@@ -1,22 +1,19 @@
 #include <stdio.h>
-#include "main.h"
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
 
 int main(void)
 {
-int a[5] = {1, 2, 98, 4, 5};
+int n;
+
+int a[5];
 
 int *p;
 
-p = &a[2];
+a[2] = 1024;
 
-printf("a[2] = %d\n", *p); // This line is already given
-    
-printf("a[2] = %d\n", *(p)); // New line added to print a[2] = 98
+p = &n;
 
+*((int *)(((char *)p) + 2 * sizeof(int))) = 98;
+
+printf("a[2] = %d\n", a[2]);
 return (0);
 }
