@@ -1,5 +1,5 @@
-#!/usr/bin/bash
-CC=gcc
+CC = gcc
 SRC = main.c school.c
-all:
+
+all: $(SRC)
 	$(CC) $(SRC) -o school
